@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "sentry": {
+      "enabled": true
+    },
+    "context7": {
+      "enabled": true
+    },
+    "shaders": {
+      "enabled": true
+    },
+    "stitch": {
+      "enabled": true
+    },
+    "notion": {
+      "enabled": true
+    }
+  }
+}
