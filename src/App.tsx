@@ -26,6 +26,7 @@ import { SettingsPage } from "@/pages/settings"
 import { KnowledgeBasePage } from "@/pages/knowledge-base"
 import { IntakePage } from "@/pages/intake"
 import { PricingPage } from "@/pages/pricing"
+import { SuccessPage } from "@/pages/success"
 import { ContractReviewProductPage } from "@/pages/marketing/contract-review"
 import { PlaybooksProductPage } from "@/pages/marketing/playbooks"
 import { ComplianceProductPage } from "@/pages/marketing/compliance"
@@ -36,15 +37,6 @@ import { CareersPage } from "@/pages/marketing/careers"
 import { PrivacyPolicyPage } from "@/pages/marketing/privacy"
 import { TermsOfServicePage } from "@/pages/marketing/terms"
 import { DpaPage } from "@/pages/marketing/dpa"
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Navbar } from './components/layout/navbar';
-import { AuthGuard } from './components/auth/auth-guard';
-import { HomePage } from './pages/home';
-import { LoginPage } from './pages/login';
-import { SignupPage } from './pages/signup';
-import { DashboardPage } from './pages/dashboard';
-import { PricingPage } from './pages/pricing';
-import { SuccessPage } from './pages/success';
 import { SubProcessorsPage } from "@/pages/marketing/sub-processors"
 
 export function App() {
@@ -52,6 +44,7 @@ export function App() {
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/pricing" element={<PricingPage />} />
+      <Route path="/success" element={<SuccessPage />} />
       <Route path="/product/contract-review" element={<ContractReviewProductPage />} />
       <Route path="/product/playbooks" element={<PlaybooksProductPage />} />
       <Route path="/product/compliance" element={<ComplianceProductPage />} />
@@ -68,71 +61,30 @@ export function App() {
       <Route path="/onboarding" element={<OnboardingPage />} />
       <Route element={<ProtectedRoute />}>
         <Route element={<AppLayout />}>
-        <Route path="/dashboard" element={<DashboardPage />} />
-        <Route path="/matters" element={<MattersListPage />} />
-        <Route path="/matters/:id" element={<MatterDetailPage />} />
-        <Route path="/contracts" element={<ContractsListPage />} />
-        <Route path="/contracts/:id" element={<ContractDetailPage />} />
-        <Route path="/review-queue" element={<ReviewQueuePage />} />
-        <Route path="/review/:id" element={<ReviewWorkspacePage />} />
-        <Route path="/playbooks" element={<PlaybooksListPage />} />
-        <Route path="/playbooks/:id" element={<PlaybookBuilderPage />} />
-        <Route path="/compliance" element={<ComplianceDashboardPage />} />
-        <Route path="/compliance/:id" element={<ComplianceControlPage />} />
-        <Route path="/agents" element={<AgentsPage />} />
-        <Route path="/approvals" element={<ApprovalsPage />} />
-        <Route path="/reports" element={<ReportsPage />} />
-        <Route path="/integrations" element={<IntegrationsPage />} />
-        <Route path="/knowledge-base" element={<KnowledgeBasePage />} />
-        <Route path="/intake" element={<IntakePage />} />
-        <Route path="/admin/users" element={<AdminUsersPage />} />
-        <Route path="/admin/audit" element={<AdminAuditPage />} />
-        <Route path="/settings" element={<SettingsPage />} />
-    <Router>
-      <div className="min-h-screen bg-background">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route 
-            path="/login" 
-            element={
-              <AuthGuard requireAuth={false}>
-                <LoginPage />
-              </AuthGuard>
-            } 
-          />
-          <Route 
-            path="/signup" 
-            element={
-              <AuthGuard requireAuth={false}>
-                <SignupPage />
-              </AuthGuard>
-            } 
-          />
-          <Route 
-            path="/dashboard" 
-            element={
-              <AuthGuard>
-                <DashboardPage />
-              </AuthGuard>
-            } 
-          />
-          <Route path="/pricing" element={<PricingPage />} />
-          <Route 
-            path="/success" 
-            element={
-              <AuthGuard>
-                <SuccessPage />
-              </AuthGuard>
-            } 
-          />
-        </Routes>
-      </div>
-    </Router>
+          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/matters" element={<MattersListPage />} />
+          <Route path="/matters/:id" element={<MatterDetailPage />} />
+          <Route path="/contracts" element={<ContractsListPage />} />
+          <Route path="/contracts/:id" element={<ContractDetailPage />} />
+          <Route path="/review-queue" element={<ReviewQueuePage />} />
+          <Route path="/review/:id" element={<ReviewWorkspacePage />} />
+          <Route path="/playbooks" element={<PlaybooksListPage />} />
+          <Route path="/playbooks/:id" element={<PlaybookBuilderPage />} />
+          <Route path="/compliance" element={<ComplianceDashboardPage />} />
+          <Route path="/compliance/:id" element={<ComplianceControlPage />} />
+          <Route path="/agents" element={<AgentsPage />} />
+          <Route path="/approvals" element={<ApprovalsPage />} />
+          <Route path="/reports" element={<ReportsPage />} />
+          <Route path="/integrations" element={<IntegrationsPage />} />
+          <Route path="/knowledge-base" element={<KnowledgeBasePage />} />
+          <Route path="/intake" element={<IntakePage />} />
+          <Route path="/admin/users" element={<AdminUsersPage />} />
+          <Route path="/admin/audit" element={<AdminAuditPage />} />
+          <Route path="/settings" element={<SettingsPage />} />
+        </Route>
+      </Route>
+    </Routes>
   )
 }
 
 export default App
-
-  )
-}
