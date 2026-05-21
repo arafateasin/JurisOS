@@ -25,11 +25,13 @@ import { AdminAuditPage } from "@/pages/admin/audit"
 import { SettingsPage } from "@/pages/settings"
 import { KnowledgeBasePage } from "@/pages/knowledge-base"
 import { IntakePage } from "@/pages/intake"
+import { PricingPage } from "@/pages/pricing"
 
 export function App() {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
+      <Route path="/pricing" element={<PricingPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/onboarding" element={<OnboardingPage />} />

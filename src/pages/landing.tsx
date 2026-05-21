@@ -19,7 +19,7 @@ export function LandingPage() {
             <a href="#features" className="text-sm text-muted-foreground hover:text-foreground">Features</a>
             <a href="#workflow" className="text-sm text-muted-foreground hover:text-foreground">How it works</a>
             <a href="#security" className="text-sm text-muted-foreground hover:text-foreground">Security</a>
-            <a href="#pricing" className="text-sm text-muted-foreground hover:text-foreground">Pricing</a>
+            <Link to="/pricing" className="text-sm text-muted-foreground hover:text-foreground">Pricing</Link>
           </div>
           <div className="flex items-center gap-3">
             <Button variant="ghost" size="sm" asChild>
@@ -189,47 +189,6 @@ export function LandingPage() {
         </div>
       </section>
 
-      <section id="pricing" className="border-y border-border bg-card py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold tracking-tight">Simple, transparent pricing</h2>
-            <p className="mt-3 text-muted-foreground">Start with contract review. Expand as you grow.</p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {[
-              { name: "Starter", price: "$299", period: "/user/month", description: "For solo GCs and small legal teams", features: ["Contract review AI", "Basic playbooks", "5 reviews/month", "Email support"] },
-              { name: "Team", price: "$199", period: "/user/month", description: "For mid-market legal and compliance teams", features: ["Everything in Starter", "Custom playbooks", "Unlimited reviews", "Integrations", "Compliance module", "Priority support"], featured: true },
-              { name: "Enterprise", price: "Custom", period: "", description: "For large legal departments and regulated industries", features: ["Everything in Team", "SSO/SAML", "Data residency", "Private deployment", "SLA & dedicated CSM", "Audit evidence export"] },
-            ].map((plan) => (
-              <Card key={plan.name} className={plan.featured ? "border-primary shadow-md" : ""}>
-                <CardHeader>
-                  {plan.featured && <Badge className="w-fit mb-2">Most popular</Badge>}
-                  <CardTitle>{plan.name}</CardTitle>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-bold">{plan.price}</span>
-                    <span className="text-sm text-muted-foreground">{plan.period}</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">{plan.description}</p>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-sm">
-                        <CheckCircle2 className="h-4 w-4 text-success" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button className="mt-6 w-full" variant={plan.featured ? "default" : "outline"} asChild>
-                    <Link to="/signup">{plan.name === "Enterprise" ? "Contact sales" : "Start free trial"}</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="rounded-xl bg-primary p-12 text-center">
           <h2 className="text-3xl font-bold text-primary-foreground">Ready to modernize your legal operations?</h2>
@@ -270,7 +229,7 @@ export function LandingPage() {
               <h4 className="mb-3 text-sm font-semibold">Company</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><a href="#security">Security</a></li>
-                <li><a href="#pricing">Pricing</a></li>
+                <li><Link to="/pricing">Pricing</Link></li>
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">Careers</a></li>
               </ul>
