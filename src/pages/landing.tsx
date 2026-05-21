@@ -219,28 +219,28 @@ export function LandingPage() {
             <div>
               <h4 className="mb-3 text-sm font-semibold">Product</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#features">Contract Review</a></li>
-                <li><a href="#features">Playbooks</a></li>
-                <li><a href="#features">Compliance</a></li>
-                <li><a href="#features">Integrations</a></li>
+                <li><Link to="/product/contract-review">Contract Review</Link></li>
+                <li><Link to="/product/playbooks">Playbooks</Link></li>
+                <li><Link to="/product/compliance">Compliance</Link></li>
+                <li><Link to="/product/integrations">Integrations</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="mb-3 text-sm font-semibold">Company</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#security">Security</a></li>
+                <li><Link to="/security">Security</Link></li>
                 <li><Link to="/pricing">Pricing</Link></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Careers</a></li>
+                <li><Link to="/blog">Blog</Link></li>
+                <li><Link to="/careers">Careers</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="mb-3 text-sm font-semibold">Legal</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#">Privacy policy</a></li>
-                <li><a href="#">Terms of service</a></li>
-                <li><a href="#">DPA</a></li>
-                <li><a href="#">Sub-processors</a></li>
+                <li><Link to="/legal/privacy">Privacy policy</Link></li>
+                <li><Link to="/legal/terms">Terms of service</Link></li>
+                <li><Link to="/legal/dpa">DPA</Link></li>
+                <li><Link to="/legal/sub-processors">Sub-processors</Link></li>
               </ul>
             </div>
           </div>

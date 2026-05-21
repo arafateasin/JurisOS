@@ -26,12 +26,34 @@ import { SettingsPage } from "@/pages/settings"
 import { KnowledgeBasePage } from "@/pages/knowledge-base"
 import { IntakePage } from "@/pages/intake"
 import { PricingPage } from "@/pages/pricing"
+import { ContractReviewProductPage } from "@/pages/marketing/contract-review"
+import { PlaybooksProductPage } from "@/pages/marketing/playbooks"
+import { ComplianceProductPage } from "@/pages/marketing/compliance"
+import { IntegrationsProductPage } from "@/pages/marketing/integrations"
+import { SecurityPage } from "@/pages/marketing/security"
+import { BlogPage } from "@/pages/marketing/blog"
+import { CareersPage } from "@/pages/marketing/careers"
+import { PrivacyPolicyPage } from "@/pages/marketing/privacy"
+import { TermsOfServicePage } from "@/pages/marketing/terms"
+import { DpaPage } from "@/pages/marketing/dpa"
+import { SubProcessorsPage } from "@/pages/marketing/sub-processors"
 
 export function App() {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/pricing" element={<PricingPage />} />
+      <Route path="/product/contract-review" element={<ContractReviewProductPage />} />
+      <Route path="/product/playbooks" element={<PlaybooksProductPage />} />
+      <Route path="/product/compliance" element={<ComplianceProductPage />} />
+      <Route path="/product/integrations" element={<IntegrationsProductPage />} />
+      <Route path="/security" element={<SecurityPage />} />
+      <Route path="/blog" element={<BlogPage />} />
+      <Route path="/careers" element={<CareersPage />} />
+      <Route path="/legal/privacy" element={<PrivacyPolicyPage />} />
+      <Route path="/legal/terms" element={<TermsOfServicePage />} />
+      <Route path="/legal/dpa" element={<DpaPage />} />
+      <Route path="/legal/sub-processors" element={<SubProcessorsPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/onboarding" element={<OnboardingPage />} />
