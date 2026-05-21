@@ -36,6 +36,15 @@ import { CareersPage } from "@/pages/marketing/careers"
 import { PrivacyPolicyPage } from "@/pages/marketing/privacy"
 import { TermsOfServicePage } from "@/pages/marketing/terms"
 import { DpaPage } from "@/pages/marketing/dpa"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Navbar } from './components/layout/navbar';
+import { AuthGuard } from './components/auth/auth-guard';
+import { HomePage } from './pages/home';
+import { LoginPage } from './pages/login';
+import { SignupPage } from './pages/signup';
+import { DashboardPage } from './pages/dashboard';
+import { PricingPage } from './pages/pricing';
+import { SuccessPage } from './pages/success';
 import { SubProcessorsPage } from "@/pages/marketing/sub-processors"
 
 export function App() {
@@ -79,10 +88,51 @@ export function App() {
         <Route path="/admin/users" element={<AdminUsersPage />} />
         <Route path="/admin/audit" element={<AdminAuditPage />} />
         <Route path="/settings" element={<SettingsPage />} />
-        </Route>
-      </Route>
-    </Routes>
+    <Router>
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route 
+            path="/login" 
+            element={
+              <AuthGuard requireAuth={false}>
+                <LoginPage />
+              </AuthGuard>
+            } 
+          />
+          <Route 
+            path="/signup" 
+            element={
+              <AuthGuard requireAuth={false}>
+                <SignupPage />
+              </AuthGuard>
+            } 
+          />
+          <Route 
+            path="/dashboard" 
+            element={
+              <AuthGuard>
+                <DashboardPage />
+              </AuthGuard>
+            } 
+          />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route 
+            path="/success" 
+            element={
+              <AuthGuard>
+                <SuccessPage />
+              </AuthGuard>
+            } 
+          />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 
 export default App
+
+  )
+}
