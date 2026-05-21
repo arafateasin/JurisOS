@@ -4,7 +4,7 @@ import { getUserSubscription } from '@/lib/stripe';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { FileText, Users, Shield, Settings, Crown } from 'lucide-react';
+import { FileText, Users, Shield, Crown } from 'lucide-react';
 
 interface SubscriptionData {
   subscription_status: string | null;

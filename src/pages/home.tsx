@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Shield, FileText, Users, Zap, CheckCircle, ArrowRight } from 'lucide-react';
+import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Shield, FileText, Users, Zap, CircleCheck as CheckCircle, ArrowRight } from 'lucide-react';
 
 export function HomePage() {
   return (
